@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curious Clinics | Biology & Mental Health</title>
+  <meta name="description" content="Curious Clinics offers free, in-person weekly lessons introducing kids to biology and mental health through fun, hands-on learning.">
+  <style>
+    :root{
+      --green:#79ad61;
+      --green-dark:#41694a;
+      --green-soft:#dcebcf;
+      --purple:#8d78b8;
+      --purple-dark:#5c4b7c;
+      --purple-soft:#eee7f7;
+      --cream:#fffaf1;
+      --pink:#f6d6d5;
+      --yellow:#f8d45a;
+      --ink:#2c2a35;
+      --muted:#686475;
+      --white:#fff;
+      --line:#ded7e8;
+      --shadow:0 12px 28px rgba(61,48,80,.10);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Georgia,"Times New Roman",serif;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at 12% 8%, rgba(141,120,184,.13) 0 70px, transparent 71px),
+        radial-gradient(circle at 92% 18%, rgba(121,173,97,.16) 0 90px, transparent 91px),
+        var(--cream);
+    }
+    a{color:inherit}
+    .site{overflow:hidden}
+    .hero{
+      background:var(--green);
+      padding:24px 18px 0;
+      position:relative;
+      border-bottom:5px solid #6a9856;
+    }
+    .hero-inner{max-width:1100px;margin:auto;position:relative;padding-bottom:36px}
+    .topbar{display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff;font-weight:800;font-size:1.05rem}
+    .brand img{width:58px;height:58px;object-fit:contain}
+    nav{display:flex;gap:8px;flex-wrap:wrap}
+    nav a{
+      text-decoration:none;
+      color:#fff;
+      padding:10px 13px;
+      border-radius:999px;
+      font-weight:700;
+      font-size:.92rem;
+    }
+    nav a:hover,nav a:focus{background:rgba(255,255,255,.2)}
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      align-items:center;
+      gap:30px;
+      padding:42px 0 12px;
+    }
+    .hero-copy h1{
+      font-size:clamp(3rem,7vw,5.8rem);
+      line-height:.9;
+      margin:0 0 16px;
+      color:#fff;
+      letter-spacing:.02em;
+    }
+    .hero-copy .tagline{
+      font-size:clamp(1.3rem,2.5vw,1.8rem);
+      font-weight:700;
+      color:#fff;
+      margin:0 0 15px;
+    }
+    .hero-copy p{color:#f8fff4;font-size:1.05rem;max-width:640px}
+    .hero-logo{
+      text-align:center;
+      background:rgba(255,255,255,.15);
+      border:2px solid rgba(255,255,255,.55);
+      border-radius:36px;
+      padding:24px;
+    }
+    .hero-logo img{width:min(100%,290px);max-height:250px;object-fit:contain}
+    .cta{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      margin-top:10px;
+      padding:14px 20px;
+      border-radius:14px;
+      background:var(--purple-dark);
+      color:#fff;
+      text-decoration:none;
+      font-weight:800;
+      border:2px solid rgba(255,255,255,.7);
+      box-shadow:0 6px 0 rgba(66,50,94,.2);
+    }
+    .cta:hover{transform:translateY(-1px)}
+    .stripe{
+      height:30px;
+      background:var(--yellow);
+      border-top:1px solid rgba(0,0,0,.08);
+      border-bottom:1px solid rgba(0,0,0,.08);
+    }
+    main{max-width:1050px;margin:auto;padding:26px 18px 60px}
+    .section{margin:42px 0}
+    .section-title{text-align:center;margin-bottom:22px}
+    .section-title h2{font-size:clamp(2rem,4vw,3rem);margin:0;color:var(--purple-dark)}
+    .section-title p{max-width:720px;margin:8px auto 0;color:var(--muted);font-size:1.03rem}
+    .paper{
+      background:#fff;
+      border:2px solid var(--line);
+      border-radius:22px;
+      padding:28px;
+      box-shadow:var(--shadow);
+    }
+    .about{display:grid;grid-template-columns:1.05fr .95fr;gap:22px;align-items:stretch}
+    .about-card{background:var(--green-soft);border-radius:20px;padding:25px}
+    .about-card h3{color:var(--green-dark);margin-top:0;font-size:1.45rem}
+    .about-card p{font-size:1.04rem}
+    .feature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin-top:18px}
+    .feature{background:var(--purple-soft);border:1px solid #ded4ed;border-radius:16px;padding:16px;text-align:center}
+    .feature .icon{font-size:1.8rem}
+    .feature strong{display:block;color:var(--purple-dark);margin-top:6px}
+    .hosts{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .host{background:#fff;border:2px solid var(--line);border-radius:20px;padding:22px;box-shadow:var(--shadow)}
+    .host .avatar{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:var(--green-soft);font-size:1.45rem;margin-bottom:12px}
+    .host h3{margin:0;color:var(--purple-dark);font-size:1.4rem}
+    .host .role{font-weight:700;color:var(--green-dark);font-size:.92rem;margin-top:4px}
+    .host p{color:var(--muted);margin-bottom:0}
+    .signup{
+      background:linear-gradient(135deg,var(--purple-soft),#fff);
+      border:2px solid #d8cbe9;
+      border-radius:26px;
+      padding:30px;
+      box-shadow:var(--shadow);
+    }
+    .signup h2{font-size:2.4rem;color:var(--purple-dark);margin-top:0}
+    .note{background:#fff8df;border-left:5px solid var(--yellow);padding:13px 15px;border-radius:10px;color:#625629}
+    form{margin-top:20px}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:17px}
+    .full{grid-column:1/-1}
+    label{font-weight:800;display:block;color:var(--ink)}
+    input,select,textarea{
+      width:100%;margin-top:7px;padding:13px 14px;
+      border:2px solid var(--line);border-radius:12px;
+      font:inherit;color:var(--ink);background:#fff;
+      outline:none;
+    }
+    textarea{min-height:120px;resize:vertical}
+    input:focus,select:focus,textarea:focus{border-color:var(--purple);box-shadow:0 0 0 3px rgba(141,120,184,.15)}
+    .submit{
+      margin-top:20px;border:0;border-radius:14px;padding:15px 23px;
+      background:var(--purple-dark);color:#fff;font:inherit;font-weight:800;cursor:pointer;
+    }
+    .submit:hover{background:#4d3f69}
+    .form-status{font-weight:700;margin-top:13px;color:var(--green-dark)}
+    .contact{
+      display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px
+    }
+    .contact-card{
+      background:#fff;border:2px solid var(--line);border-radius:18px;padding:20px;
+      text-align:center
+    }
+    .contact-card a{color:var(--purple-dark);font-weight:800}
+    footer{background:var(--green-dark);color:#f6fff0;padding:28px 18px;text-align:center}
+    footer p{color:#e7f4df;margin:5px 0}
+    .small{font-size:.9rem}
+    @media(max-width:800px){
+      .hero-grid,.about{grid-template-columns:1fr}
+      .hero-logo{max-width:400px;margin:auto}
+      .hosts{grid-template-columns:1fr}
+      .feature-grid{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:560px){
+      .topbar{align-items:flex-start}
+      nav{display:none}
+      .hero{padding-top:15px}
+      .hero-grid{padding-top:28px}
+      .form-grid,.contact{grid-template-columns:1fr}
+      .feature-grid{grid-template-columns:1fr}
+      .paper,.signup{padding:20px}
+    }
+  </style>
+</head>
+<body>
+<div class="site">
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="topbar">
+        <a class="brand" href="#">
+          <img src="logo.png" alt="Curious Clinics logo">
+          <span>Curious Clinics</span>
+        </a>
+        <nav aria-label="Main navigation">
+          <a href="#about">About</a>
+          <a href="#hosts">Hosts</a>
+          <a href="#signup">Sign Up</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <h1>Curious<br>Clinics</h1>
+          <p class="tagline">Biology &amp; Mental Health Lessons for Curious Minds</p>
+          <p>
+            Free, in-person educational sessions designed to introduce children
+            to the fascinating basics of biology and mental health through
+            engaging, age-appropriate activities.
+          </p>
+          <a class="cta" href="#signup">SIGN UP FOR A LESSON ↓</a>
+        </div>
+        <div class="hero-logo">
+          <img src="logo.png" alt="Curious Clinics brain and DNA leaf logo">
+          <p style="color:#fff;font-weight:800;margin-bottom:0">Everything is free!</p>
+        </div>
+      </div>
+    </div>
+    <div class="stripe"></div>
+  </header>
+
+  <main>
+    <section id="about" class="section">
+      <div class="section-title">
+        <h2>About Curious Clinics</h2>
+        <p>Making early science and health education welcoming, memorable, and fun.</p>
+      </div>
+
+      <div class="about">
+        <div class="paper">
+          <p>
+            Curious Clinics is a free, community-focused educational program
+            created by three high school students who believe that children
+            should have opportunities to explore science and health topics
+            from an early age.
+          </p>
+          <p>
+            Each week, we introduce a new topic from the basics of biology and
+            mental health, while emphasizing why understanding our bodies,
+            brains, and well-being matters. Sessions are designed to be
+            interactive rather than lecture-based, using hands-on activities,
+            presentations, demonstrations, and other engaging ways to learn.
+          </p>
+          <p>
+            Sessions typically last <strong>1–2 hours</strong>. Locations vary
+            depending on the session, and all programming is offered
+            <strong>completely free of charge</strong>.
+          </p>
+        </div>
+
+        <div class="about-card">
+          <h3>What can families expect?</h3>
+          <p>Friendly instructors, age-appropriate explanations, and plenty of opportunities for students to ask questions and participate.</p>
+          <div class="feature-grid">
+            <div class="feature"><div class="icon">🧬</div><strong>Biology</strong></div>
+            <div class="feature"><div class="icon">🧠</div><strong>Mental Health</strong></div>
+            <div class="feature"><div class="icon">🧪</div><strong>Hands-On</strong></div>
+            <div class="feature"><div class="icon">🎨</div><strong>Creative</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="hosts" class="section">
+      <div class="section-title">
+        <h2>Meet the Hosts</h2>
+        <p>Three high school students working together to make science and health education more approachable.</p>
+      </div>
+
+      <div class="hosts">
+        <article class="host">
+          <div class="avatar">🌱</div>
+          <h3>Ritisha</h3>
+          <div class="role">Sophomore • Psychology &amp; Teaching</div>
+          <p>
+            Ritisha has a strong interest in psychology and enjoys helping
+            younger students learn. With previous tutoring experience, she
+            hopes to make complex ideas easier to understand and exciting to explore.
+          </p>
+        </article>
+
+        <article class="host">
+          <div class="avatar">💚</div>
+          <h3>Rumi</h3>
+          <div class="role">Sophomore • Childcare &amp; Health Education</div>
+          <p>
+            Rumi brings years of babysitting experience and a passion for
+            sharing the importance of medical and health knowledge with younger
+            students in a friendly, approachable setting.
+          </p>
+        </article>
+
+        <article class="host">
+          <div class="avatar">🔬</div>
+          <h3>Ruina</h3>
+          <div class="role">Sophomore • Psychology &amp; Tutoring</div>
+          <p>
+            Ruina has experience with both tutoring and babysitting and enjoys
+            sharing her interest in psychology. She hopes to help students
+            become curious about the science behind the mind and behavior.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="signup" class="section">
+      <div class="signup">
+        <h2>Sign Up for a Lesson</h2>
+        <p>
+          We would love to welcome your child to a Curious Clinics session.
+          Please have a parent or guardian complete the form below.
+        </p>
+        <div class="note">
+          <strong>Important:</strong> This website is for in-person sessions only.
+          There are no online classes. A parent/guardian should provide the contact
+          information below for registration.
+        </div>
+
+        <form id="signupForm">
+          <div class="form-grid">
+            <div>
+              <label for="childName">Child's Name *</label>
+              <input id="childName" name="childName" type="text" required maxlength="80" autocomplete="name">
+            </div>
+            <div>
+              <label for="parentName">Parent/Guardian Name *</label>
+              <input id="parentName" name="parentName" type="text" required maxlength="80">
+            </div>
+            <div>
+              <label for="phone">Parent/Guardian Phone *</label>
+              <input id="phone" name="phone" type="tel" required maxlength="30" autocomplete="tel">
+            </div>
+            <div>
+              <label for="email">Parent/Guardian Email *</label>
+              <input id="email" name="email" type="email" required maxlength="120" autocomplete="email">
+            </div>
+            <div>
+              <label for="day">Day Attending *</label>
+              <input id="day" name="day" type="text" required maxlength="80" placeholder="Example: Saturday, October 12">
+            </div>
+            <div>
+              <label for="location">Location *</label>
+              <input id="location" name="location" type="text" required maxlength="120" placeholder="Session location">
+            </div>
+            <div class="full">
+              <label for="comments">Additional Comments</label>
+              <textarea id="comments" name="comments" maxlength="1000" placeholder="Anything you'd like us to know?"></textarea>
+            </div>
+          </div>
+          <button class="submit" type="submit">Submit Sign-Up Request</button>
+          <div id="formStatus" class="form-status" aria-live="polite"></div>
+        </form>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="section-title">
+        <h2>Contact Curious Clinics</h2>
+        <p>Questions about the program or an upcoming session? We'd be happy to hear from you.</p>
+      </div>
+      <div class="contact">
+        <div class="contact-card">
+          <div style="font-size:1.8rem">📞</div>
+          <strong>Phone</strong>
+          <p><a href="tel:4083936272">408-393-6272</a></p>
+        </div>
+        <div class="contact-card">
+          <div style="font-size:1.8rem">✉️</div>
+          <strong>Email</strong>
+          <p><a href="mailto:curiousclinics@gmail.com">curiousclinics@gmail.com</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <strong>Curious Clinics</strong>
+    <p>Free, in-person biology and mental health education for curious young minds.</p>
+    <p class="small">Hosted by three high school students with a passion for teaching.</p>
+  </footer>
+</div>
+
+<script>
+  // Paste your deployed Google Apps Script Web App URL below.
+  const GOOGLE_SHEET_URL = 'PASTE_YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE';
+
+  document.getElementById('signupForm').addEventListener('submit', async function(event) {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const status = document.getElementById('formStatus');
+    const button = form.querySelector('.submit');
+
+    if (GOOGLE_SHEET_URL.includes('PASTE_YOUR')) {
+      status.textContent = 'The form is ready, but the Google Sheet connection still needs to be added. Follow the setup guide included with this website.';
+      status.style.color = '#a33b3b';
+      return;
+    }
+
+    const data = Object.fromEntries(new FormData(form).entries());
+    button.disabled = true;
+    button.textContent = 'Submitting…';
+    status.textContent = 'Sending your sign-up request…';
+    status.style.color = '#41694a';
+
+    try {
+      await fetch(GOOGLE_SHEET_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {'Content-Type': 'text/plain;charset=utf-8'},
+        body: JSON.stringify(data)
+      });
+
+      form.reset();
+      status.textContent = 'Thank you! Your sign-up request has been submitted.';
+      status.style.color = '#19764b';
+    } catch (error) {
+      status.textContent = 'Something went wrong. Please contact curiousclinics@gmail.com.';
+      status.style.color = '#a33b3b';
+    } finally {
+      button.disabled = false;
+      button.textContent = 'Submit Sign-Up Request';
+    }
+  });
+</script>
+</body>
+</html>
