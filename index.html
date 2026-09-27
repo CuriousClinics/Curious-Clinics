@@ -369,6 +369,21 @@
       color:var(--green-dark);
     }
 
+    /* NEW: WHAT TO BRING */
+
+    .what-to-bring{
+      background:#f5f0fb;
+      border:1px solid #d8cbe9;
+      padding:15px 17px;
+      border-radius:12px;
+      margin:15px 0;
+      color:var(--purple-dark);
+    }
+
+    .what-to-bring strong{
+      color:var(--purple-dark);
+    }
+
     form{
       margin-top:20px;
     }
@@ -415,7 +430,9 @@
       box-shadow:0 0 0 3px rgba(141,120,184,.15);
     }
 
-    /* SESSION CHECKBOXES */
+    /* =========================
+       SESSION CHECKBOXES
+    ========================= */
 
     .session-options{
       margin-top:8px;
@@ -711,9 +728,7 @@
   <main>
 
 
-    <!-- =========================
-         ABOUT
-    ========================= -->
+    <!-- ABOUT -->
 
     <section
       id="about"
@@ -850,9 +865,7 @@
     </section>
 
 
-    <!-- =========================
-         HOSTS
-    ========================= -->
+    <!-- HOSTS -->
 
     <section
       id="hosts"
@@ -875,8 +888,6 @@
 
       <div class="hosts">
 
-
-        <!-- RITISHA -->
 
         <article class="host">
 
@@ -905,8 +916,6 @@
         </article>
 
 
-        <!-- RUMI -->
-
         <article class="host">
 
           <div class="avatar">
@@ -932,8 +941,6 @@
 
         </article>
 
-
-        <!-- RUINA -->
 
         <article class="host">
 
@@ -965,9 +972,7 @@
     </section>
 
 
-    <!-- =========================
-         SIGNUP
-    ========================= -->
+    <!-- SIGNUP -->
 
     <section
       id="signup"
@@ -1022,6 +1027,24 @@
           If you are interested in private tutoring, please mention it in
           the comments section below and we will contact you with more
           information.
+
+        </div>
+
+
+        <!-- WHAT TO BRING -->
+
+        <div class="what-to-bring">
+
+          <strong>
+            🎒 What to Bring:
+          </strong>
+
+          Please have your child bring a
+          <strong>water bottle</strong>
+          and any other items they may need for the session.
+
+          If your child has any specific accommodations or needs,
+          please mention them in the comments section below.
 
         </div>
 
@@ -1293,7 +1316,7 @@
             </div>
 
 
-            <!-- ADDITIONAL COMMENTS -->
+            <!-- COMMENTS -->
 
             <div class="full">
 
@@ -1339,9 +1362,7 @@
     </section>
 
 
-    <!-- =========================
-         CONTACT
-    ========================= -->
+    <!-- CONTACT -->
 
     <section
       id="contact"
@@ -1366,8 +1387,6 @@
       <div class="contact">
 
 
-        <!-- PHONE -->
-
         <div class="contact-card">
 
           <div style="font-size:1.8rem">
@@ -1388,8 +1407,6 @@
 
         </div>
 
-
-        <!-- EMAIL -->
 
         <div class="contact-card">
 
@@ -1447,9 +1464,7 @@
   </main>
 
 
-  <!-- =========================
-       FOOTER
-  ========================= -->
+  <!-- FOOTER -->
 
   <footer>
 
@@ -1477,30 +1492,13 @@
 
 <script>
 
-  /*
-   * Google Apps Script Web App URL
-   *
-   * IMPORTANT:
-   * This must be the plain URL.
-   * Do NOT put Markdown brackets or parentheses around it.
-   */
-
   const GOOGLE_SHEET_URL =
     "https://script.google.com/macros/s/AKfycbxteEjtCb9Ve_ifBJSS72ZiA71YkLlVWL72AwW8dteofjwCqSkFBxNMLg8pItT4oFJg/exec";
 
 
-  /*
-   * Listen for form submission.
-   */
-
   document
     .getElementById('signupForm')
     .addEventListener('submit', async function(event) {
-
-
-      /*
-       * Prevent the browser from refreshing the page.
-       */
 
       event.preventDefault();
 
@@ -1515,10 +1513,6 @@
         form.querySelector('.submit');
 
 
-      /*
-       * Check whether the Google Sheet URL has been configured.
-       */
-
       if (GOOGLE_SHEET_URL.includes('PASTE_YOUR')) {
 
         status.textContent =
@@ -1531,10 +1525,6 @@
       }
 
 
-      /*
-       * Collect the regular form fields.
-       */
-
       const data =
         Object.fromEntries(
           new FormData(form).entries()
@@ -1542,10 +1532,7 @@
 
 
       /*
-       * Collect ALL selected sessions.
-       *
-       * Because multiple checkboxes can be selected,
-       * we collect them into an array first.
+       * Collect all selected sessions.
        */
 
       const selectedSessions =
@@ -1561,7 +1548,7 @@
 
 
       /*
-       * Make sure the parent selected at least one session.
+       * Require at least one session.
        */
 
       if (selectedSessions.length === 0) {
@@ -1577,21 +1564,12 @@
 
 
       /*
-       * Put all selected sessions into one field.
-       *
-       * Example:
-       *
-       * October 27, 3-4 PM, Sedgwick,
-       * October 28, 6-7 PM, Sedgwick
+       * Store all selected sessions together.
        */
 
       data.sessions =
         selectedSessions.join(', ');
 
-
-      /*
-       * Disable the button while submitting.
-       */
 
       button.disabled = true;
 
@@ -1607,11 +1585,6 @@
 
 
       try {
-
-
-        /*
-         * Send the information to Google Apps Script.
-         */
 
         await fetch(
           GOOGLE_SHEET_URL,
@@ -1631,16 +1604,8 @@
         );
 
 
-        /*
-         * Clear the form after submission.
-         */
-
         form.reset();
 
-
-        /*
-         * Show success message.
-         */
 
         status.textContent =
           'Thank you! Your sign-up request has been submitted.';
@@ -1651,11 +1616,6 @@
 
       } catch(error) {
 
-
-        /*
-         * Show error message.
-         */
-
         status.textContent =
           'Something went wrong. Please contact curiousclinics@gmail.com.';
 
@@ -1663,11 +1623,6 @@
           '#a33b3b';
 
       } finally {
-
-
-        /*
-         * Re-enable the button.
-         */
 
         button.disabled = false;
 
