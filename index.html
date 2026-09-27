@@ -3,8 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Curious Clinics | Biology & Mental Health</title>
-  <meta name="description" content="Curious Clinics offers free, in-person weekly lessons introducing kids to biology and mental health through fun, hands-on learning.">
+
+  <meta
+    name="description"
+    content="Curious Clinics offers free, in-person weekly lessons introducing kids to biology and mental health through fun, hands-on learning."
+  >
+
   <style>
     :root{
       --green:#79ad61;
@@ -23,23 +29,43 @@
       --shadow:0 12px 28px rgba(61,48,80,.10);
     }
 
-    *{box-sizing:border-box}
+    *{
+      box-sizing:border-box;
+    }
 
-    html{scroll-behavior:smooth}
+    html{
+      scroll-behavior:smooth;
+    }
 
     body{
       margin:0;
       font-family:Georgia,"Times New Roman",serif;
       color:var(--ink);
       background:
-        radial-gradient(circle at 12% 8%, rgba(141,120,184,.13) 0 70px, transparent 71px),
-        radial-gradient(circle at 92% 18%, rgba(121,173,97,.16) 0 90px, transparent 91px),
+        radial-gradient(
+          circle at 12% 8%,
+          rgba(141,120,184,.13) 0 70px,
+          transparent 71px
+        ),
+        radial-gradient(
+          circle at 92% 18%,
+          rgba(121,173,97,.16) 0 90px,
+          transparent 91px
+        ),
         var(--cream);
     }
 
-    a{color:inherit}
+    a{
+      color:inherit;
+    }
 
-    .site{overflow:hidden}
+    .site{
+      overflow:hidden;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
 
     .hero{
       background:var(--green);
@@ -168,6 +194,10 @@
       border-bottom:1px solid rgba(0,0,0,.08);
     }
 
+    /* =========================
+       GENERAL
+    ========================= */
+
     main{
       max-width:1050px;
       margin:auto;
@@ -203,6 +233,10 @@
       padding:28px;
       box-shadow:var(--shadow);
     }
+
+    /* =========================
+       ABOUT
+    ========================= */
 
     .about{
       display:grid;
@@ -252,6 +286,10 @@
       margin-top:6px;
     }
 
+    /* =========================
+       HOSTS
+    ========================= */
+
     .hosts{
       display:grid;
       grid-template-columns:repeat(3,1fr);
@@ -294,6 +332,10 @@
       color:var(--muted);
       margin-bottom:0;
     }
+
+    /* =========================
+       SIGNUP
+    ========================= */
 
     .signup{
       background:linear-gradient(135deg,var(--purple-soft),#fff);
@@ -362,7 +404,7 @@
     }
 
     textarea{
-      min-height:120px;
+      min-height:140px;
       resize:vertical;
     }
 
@@ -372,6 +414,8 @@
       border-color:var(--purple);
       box-shadow:0 0 0 3px rgba(141,120,184,.15);
     }
+
+    /* SESSION CHECKBOXES */
 
     .session-options{
       margin-top:8px;
@@ -428,11 +472,20 @@
       background:#4d3f69;
     }
 
+    .submit:disabled{
+      opacity:.65;
+      cursor:not-allowed;
+    }
+
     .form-status{
       font-weight:700;
       margin-top:13px;
       color:var(--green-dark);
     }
+
+    /* =========================
+       CONTACT
+    ========================= */
 
     .contact{
       display:grid;
@@ -473,6 +526,10 @@
       text-decoration:underline;
     }
 
+    /* =========================
+       FOOTER
+    ========================= */
+
     footer{
       background:var(--green-dark);
       color:#f6fff0;
@@ -489,7 +546,12 @@
       font-size:.9rem;
     }
 
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
     @media(max-width:800px){
+
       .hero-grid,
       .about{
         grid-template-columns:1fr;
@@ -514,6 +576,7 @@
     }
 
     @media(max-width:560px){
+
       .topbar{
         align-items:flex-start;
       }
@@ -547,34 +610,57 @@
   </style>
 </head>
 
+
 <body>
+
 <div class="site">
 
+  <!-- =========================
+       HEADER
+  ========================= -->
+
   <header class="hero">
+
     <div class="hero-inner">
 
       <div class="topbar">
+
         <a class="brand" href="#">
-          <img src="logo.png" alt="Curious Clinics logo">
+          <img
+            src="logo.png"
+            alt="Curious Clinics logo"
+          >
+
           <span>Curious Clinics</span>
         </a>
 
+
         <nav aria-label="Main navigation">
+
           <a href="#about">About</a>
           <a href="#hosts">Hosts</a>
           <a href="#signup">Sign Up</a>
           <a href="#contact">Contact</a>
+
         </nav>
+
       </div>
+
 
       <div class="hero-grid">
 
         <div class="hero-copy">
-          <h1>Curious<br>Clinics</h1>
+
+          <h1>
+            Curious<br>
+            Clinics
+          </h1>
+
 
           <p class="tagline">
             Biology &amp; Mental Health Lessons for Curious Minds
           </p>
+
 
           <p>
             Free, in-person educational sessions designed to introduce children
@@ -582,39 +668,74 @@
             engaging, age-appropriate activities.
           </p>
 
-          <a class="cta" href="#signup">
+
+          <a
+            class="cta"
+            href="#signup"
+          >
             SIGN UP FOR A LESSON ↓
           </a>
+
         </div>
 
-        <div class="hero-logo">
-          <img src="logo.png" alt="Curious Clinics brain and DNA leaf logo">
 
-          <p style="color:#fff;font-weight:800;margin-bottom:0">
+        <div class="hero-logo">
+
+          <img
+            src="logo.png"
+            alt="Curious Clinics brain and DNA leaf logo"
+          >
+
+          <p
+            style="color:#fff;font-weight:800;margin-bottom:0"
+          >
             Everything is free!
           </p>
+
         </div>
 
       </div>
+
     </div>
 
+
     <div class="stripe"></div>
+
   </header>
 
 
+  <!-- =========================
+       MAIN
+  ========================= -->
+
   <main>
 
-    <!-- ABOUT -->
-    <section id="about" class="section">
+
+    <!-- =========================
+         ABOUT
+    ========================= -->
+
+    <section
+      id="about"
+      class="section"
+    >
 
       <div class="section-title">
-        <h2>About Curious Clinics</h2>
+
+        <h2>
+          About Curious Clinics
+        </h2>
+
         <p>
-          Making early science and health education welcoming, memorable, and fun.
+          Making early science and health education welcoming,
+          memorable, and fun.
         </p>
+
       </div>
 
+
       <div class="about">
+
 
         <div class="paper">
 
@@ -625,6 +746,7 @@
             from an early age.
           </p>
 
+
           <p>
             Each week, we introduce a new topic from the basics of biology and
             mental health, while emphasizing why understanding our bodies,
@@ -633,116 +755,202 @@
             presentations, demonstrations, and other engaging ways to learn.
           </p>
 
-          <p>
-            Sessions typically last <strong>1–2 hours</strong>. Locations vary
-            depending on the session, and all programming is offered
-            <strong>completely free of charge</strong>.
-          </p>
 
           <p>
-            <strong>Minimum age: 5 years old.</strong>
+            Sessions typically last
+            <strong>1–2 hours</strong>.
+            Locations vary depending on the session, and all programming is
+            offered <strong>completely free of charge</strong>.
+          </p>
+
+
+          <p>
+            <strong>
+              Minimum age: 5 years old.
+            </strong>
           </p>
 
         </div>
+
 
         <div class="about-card">
 
-          <h3>What can families expect?</h3>
+          <h3>
+            What can families expect?
+          </h3>
+
 
           <p>
-            Friendly instructors, age-appropriate explanations, and plenty of
-            opportunities for students to ask questions and participate.
+            Friendly instructors, age-appropriate explanations, and plenty
+            of opportunities for students to ask questions and participate.
           </p>
+
 
           <div class="feature-grid">
 
-            <div class="feature">
-              <div class="icon">🧬</div>
-              <strong>Biology</strong>
-            </div>
 
             <div class="feature">
-              <div class="icon">🧠</div>
-              <strong>Mental Health</strong>
+
+              <div class="icon">
+                🧬
+              </div>
+
+              <strong>
+                Biology
+              </strong>
+
             </div>
 
-            <div class="feature">
-              <div class="icon">🧪</div>
-              <strong>Hands-On</strong>
-            </div>
 
             <div class="feature">
-              <div class="icon">🎨</div>
-              <strong>Creative</strong>
+
+              <div class="icon">
+                🧠
+              </div>
+
+              <strong>
+                Mental Health
+              </strong>
+
             </div>
+
+
+            <div class="feature">
+
+              <div class="icon">
+                🧪
+              </div>
+
+              <strong>
+                Hands-On
+              </strong>
+
+            </div>
+
+
+            <div class="feature">
+
+              <div class="icon">
+                🎨
+              </div>
+
+              <strong>
+                Creative
+              </strong>
+
+            </div>
+
 
           </div>
+
         </div>
 
       </div>
+
     </section>
 
 
-    <!-- HOSTS -->
-    <section id="hosts" class="section">
+    <!-- =========================
+         HOSTS
+    ========================= -->
+
+    <section
+      id="hosts"
+      class="section"
+    >
 
       <div class="section-title">
-        <h2>Meet the Hosts</h2>
+
+        <h2>
+          Meet the Hosts
+        </h2>
+
         <p>
           Three high school students working together to make science and
           health education more approachable.
         </p>
+
       </div>
+
 
       <div class="hosts">
 
+
+        <!-- RITISHA -->
+
         <article class="host">
 
-          <div class="avatar">🌱</div>
+          <div class="avatar">
+            🌱
+          </div>
 
-          <h3>Ritisha Manoj</h3>
+
+          <h3>
+            Ritisha Manoj
+          </h3>
+
 
           <div class="role">
             Sophomore • Psychology &amp; Teaching
           </div>
 
+
           <p>
             Ritisha has a strong interest in psychology and enjoys helping
             younger students learn. With previous tutoring experience, she
-            hopes to make complex ideas easier to understand and exciting to explore.
+            hopes to make complex ideas easier to understand and exciting
+            to explore.
           </p>
 
         </article>
 
 
+        <!-- RUMI -->
+
         <article class="host">
 
-          <div class="avatar">💚</div>
+          <div class="avatar">
+            💚
+          </div>
 
-          <h3>Rumi Kaur</h3>
+
+          <h3>
+            Rumi Kaur
+          </h3>
+
 
           <div class="role">
             Sophomore • Childcare &amp; Health Education
           </div>
 
+
           <p>
             Rumi brings years of babysitting experience and a passion for
-            sharing the importance of medical and health knowledge with younger
-            students in a friendly, approachable setting.
+            sharing the importance of medical and health knowledge with
+            younger students in a friendly, approachable setting.
           </p>
 
         </article>
 
 
+        <!-- RUINA -->
+
         <article class="host">
 
-          <div class="avatar">🔬</div>
+          <div class="avatar">
+            🔬
+          </div>
 
-          <h3>Ruina Li</h3>
+
+          <h3>
+            Ruina Li
+          </h3>
+
 
           <div class="role">
             Sophomore • Psychology &amp; Tutoring
           </div>
+
 
           <p>
             Ruina has experience with both tutoring and babysitting and enjoys
@@ -753,43 +961,83 @@
         </article>
 
       </div>
+
     </section>
 
 
-    <!-- SIGNUP -->
-    <section id="signup" class="section">
+    <!-- =========================
+         SIGNUP
+    ========================= -->
+
+    <section
+      id="signup"
+      class="section"
+    >
 
       <div class="signup">
 
-        <h2>Sign Up for a Lesson</h2>
+
+        <h2>
+          Sign Up for a Lesson
+        </h2>
+
 
         <p>
           We would love to welcome your child to a Curious Clinics session.
           Please have a parent or guardian complete the form below.
         </p>
 
+
+        <!-- IMPORTANT NOTICE -->
+
         <div class="note">
-          <strong>Important:</strong>
+
+          <strong>
+            Important:
+          </strong>
+
           This website is for in-person sessions only.
           There are no online classes. A parent/guardian should provide the
           contact information below for registration.
-          The minimum age for Curious Clinics is <strong>5 years old</strong>.
+
+          The minimum age for Curious Clinics is
+          <strong>5 years old</strong>.
+
         </div>
+
+
+        <!-- PRIVATE TUTORING -->
 
         <div class="private-tutoring">
-          <strong>Looking for one-on-one support?</strong>
-          We also offer <strong>private 1-on-1 tutoring</strong>.
+
+          <strong>
+            Looking for one-on-one support?
+          </strong>
+
+          We also offer
+          <strong>
+            private 1-on-1 tutoring.
+          </strong>
+
           If you are interested in private tutoring, please mention it in
-          the comments section below and we will contact you with more information.
+          the comments section below and we will contact you with more
+          information.
+
         </div>
 
+
+        <!-- FORM -->
 
         <form id="signupForm">
 
+
           <div class="form-grid">
 
+
             <!-- CHILD NAME -->
+
             <div>
+
               <label for="childName">
                 Child's Name *
               </label>
@@ -802,11 +1050,14 @@
                 maxlength="80"
                 autocomplete="name"
               >
+
             </div>
 
 
-            <!-- GRADE LEVEL -->
+            <!-- GRADE -->
+
             <div>
+
               <label for="grade">
                 Child's Grade Level *
               </label>
@@ -816,28 +1067,80 @@
                 name="grade"
                 required
               >
-                <option value="">Select grade</option>
-                <option value="Pre-K">Pre-K</option>
-                <option value="Kindergarten">Kindergarten</option>
-                <option value="1st Grade">1st Grade</option>
-                <option value="2nd Grade">2nd Grade</option>
-                <option value="3rd Grade">3rd Grade</option>
-                <option value="4th Grade">4th Grade</option>
-                <option value="5th Grade">5th Grade</option>
-                <option value="6th Grade">6th Grade</option>
-                <option value="7th Grade">7th Grade</option>
-                <option value="8th Grade">8th Grade</option>
-                <option value="9th Grade">9th Grade</option>
-                <option value="10th Grade">10th Grade</option>
-                <option value="11th Grade">11th Grade</option>
-                <option value="12th Grade">12th Grade</option>
-                <option value="Other">Other</option>
+
+                <option value="">
+                  Select grade
+                </option>
+
+                <option value="Pre-K">
+                  Pre-K
+                </option>
+
+                <option value="Kindergarten">
+                  Kindergarten
+                </option>
+
+                <option value="1st Grade">
+                  1st Grade
+                </option>
+
+                <option value="2nd Grade">
+                  2nd Grade
+                </option>
+
+                <option value="3rd Grade">
+                  3rd Grade
+                </option>
+
+                <option value="4th Grade">
+                  4th Grade
+                </option>
+
+                <option value="5th Grade">
+                  5th Grade
+                </option>
+
+                <option value="6th Grade">
+                  6th Grade
+                </option>
+
+                <option value="7th Grade">
+                  7th Grade
+                </option>
+
+                <option value="8th Grade">
+                  8th Grade
+                </option>
+
+                <option value="9th Grade">
+                  9th Grade
+                </option>
+
+                <option value="10th Grade">
+                  10th Grade
+                </option>
+
+                <option value="11th Grade">
+                  11th Grade
+                </option>
+
+                <option value="12th Grade">
+                  12th Grade
+                </option>
+
+                <option value="Other">
+                  Other
+                </option>
+
               </select>
+
             </div>
 
 
             <!-- PARENT NAME -->
+
             <div>
+
               <label for="parentName">
                 Parent/Guardian Name *
               </label>
@@ -849,11 +1152,14 @@
                 required
                 maxlength="80"
               >
+
             </div>
 
 
             <!-- PHONE -->
+
             <div>
+
               <label for="phone">
                 Parent/Guardian Phone *
               </label>
@@ -866,11 +1172,14 @@
                 maxlength="30"
                 autocomplete="tel"
               >
+
             </div>
 
 
             <!-- EMAIL -->
+
             <div>
+
               <label for="email">
                 Parent/Guardian Email *
               </label>
@@ -883,95 +1192,115 @@
                 maxlength="120"
                 autocomplete="email"
               >
+
             </div>
 
 
-            <!-- SESSION OPTIONS -->
+            <!-- SESSION CHECKBOXES -->
+
             <div class="full">
 
               <label>
                 Select Session(s) *
               </label>
 
+
               <p class="session-help">
                 Please check all sessions your child would be able to attend.
               </p>
 
+
               <div class="session-options">
 
-                <label class="session-option">
-                  <input
-                    type="checkbox"
-                    name="sessions"
-                    value="October 27, 3-4 PM"
-                  >
-                  <span>October 27 • 3–4 PM</span>
-                </label>
 
                 <label class="session-option">
+
                   <input
                     type="checkbox"
                     name="sessions"
-                    value="October 27, 4-5 PM"
+                    value="October 27, 3-4 PM, Sedgwick"
                   >
-                  <span>October 27 • 4–5 PM</span>
+
+                  <span>
+                    October 27 • 3–4 PM • Sedgwick
+                  </span>
+
                 </label>
 
-                <label class="session-option">
-                  <input
-                    type="checkbox"
-                    name="sessions"
-                    value="October 28, 6-7 PM"
-                  >
-                  <span>October 28 • 6–7 PM</span>
-                </label>
 
                 <label class="session-option">
+
                   <input
                     type="checkbox"
                     name="sessions"
-                    value="October 28, 7-8 PM"
+                    value="October 27, 4-5 PM, Sedgwick"
                   >
-                  <span>October 28 • 7–8 PM</span>
+
+                  <span>
+                    October 27 • 4–5 PM • Sedgwick
+                  </span>
+
                 </label>
 
+
                 <label class="session-option">
+
                   <input
                     type="checkbox"
                     name="sessions"
-                    value="October 30, 1-2 PM"
+                    value="October 28, 6-7 PM, Sedgwick"
                   >
-                  <span>October 30 • 1–2 PM</span>
+
+                  <span>
+                    October 28 • 6–7 PM • Sedgwick
+                  </span>
+
                 </label>
+
+
+                <label class="session-option">
+
+                  <input
+                    type="checkbox"
+                    name="sessions"
+                    value="October 28, 7-8 PM, Sedgwick"
+                  >
+
+                  <span>
+                    October 28 • 7–8 PM • Sedgwick
+                  </span>
+
+                </label>
+
+
+                <label class="session-option">
+
+                  <input
+                    type="checkbox"
+                    name="sessions"
+                    value="October 30, 1-2 PM, Sedgwick"
+                  >
+
+                  <span>
+                    October 30 • 1–2 PM • Sedgwick
+                  </span>
+
+                </label>
+
 
               </div>
 
             </div>
 
 
-            <!-- LOCATION -->
-            <div>
-              <label for="location">
-                Location *
-              </label>
+            <!-- ADDITIONAL COMMENTS -->
 
-              <input
-                id="location"
-                name="location"
-                type="text"
-                required
-                maxlength="120"
-                placeholder="Session location"
-              >
-            </div>
-
-
-            <!-- COMMENTS -->
             <div class="full">
 
               <label for="comments">
                 Additional Comments, Allergies &amp; Medical Conditions
               </label>
+
 
               <textarea
                 id="comments"
@@ -982,12 +1311,19 @@
 
             </div>
 
+
           </div>
 
 
-          <button class="submit" type="submit">
+          <!-- SUBMIT -->
+
+          <button
+            class="submit"
+            type="submit"
+          >
             Submit Sign-Up Request
           </button>
+
 
           <div
             id="formStatus"
@@ -995,18 +1331,29 @@
             aria-live="polite"
           ></div>
 
+
         </form>
 
       </div>
+
     </section>
 
 
-    <!-- CONTACT -->
-    <section id="contact" class="section">
+    <!-- =========================
+         CONTACT
+    ========================= -->
+
+    <section
+      id="contact"
+      class="section"
+    >
+
 
       <div class="section-title">
 
-        <h2>Contact Curious Clinics</h2>
+        <h2>
+          Contact Curious Clinics
+        </h2>
 
         <p>
           Questions about the program or an upcoming session?
@@ -1018,46 +1365,70 @@
 
       <div class="contact">
 
+
+        <!-- PHONE -->
+
         <div class="contact-card">
 
-          <div style="font-size:1.8rem">📞</div>
+          <div style="font-size:1.8rem">
+            📞
+          </div>
 
-          <strong>Phone</strong>
+          <strong>
+            Phone
+          </strong>
 
           <p>
+
             <a href="tel:4083936272">
               408-393-6272
             </a>
+
           </p>
 
         </div>
 
+
+        <!-- EMAIL -->
 
         <div class="contact-card">
 
-          <div style="font-size:1.8rem">✉️</div>
+          <div style="font-size:1.8rem">
+            ✉️
+          </div>
 
-          <strong>Email</strong>
+          <strong>
+            Email
+          </strong>
 
           <p>
+
             <a href="mailto:curiousclinics@gmail.com">
               curiousclinics@gmail.com
             </a>
+
           </p>
 
         </div>
+
 
       </div>
 
 
       <!-- INSTAGRAM -->
+
       <div class="instagram-card">
 
-        <div style="font-size:1.8rem">📸</div>
+        <div style="font-size:1.8rem">
+          📸
+        </div>
 
-        <strong>Follow Curious Clinics on Instagram</strong>
+        <strong>
+          Follow Curious Clinics on Instagram
+        </strong>
 
         <p>
+
           <a
             href="https://www.instagram.com/curiousclinics/"
             target="_blank"
@@ -1065,21 +1436,30 @@
           >
             @curiousclinics
           </a>
+
         </p>
 
       </div>
+
 
     </section>
 
   </main>
 
 
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
   <footer>
 
-    <strong>Curious Clinics</strong>
+    <strong>
+      Curious Clinics
+    </strong>
 
     <p>
-      Free, in-person biology and mental health education for curious young minds.
+      Free, in-person biology and mental health education
+      for curious young minds.
     </p>
 
     <p class="small">
@@ -1091,116 +1471,203 @@
 </div>
 
 
+<!-- =========================
+     FORM JAVASCRIPT
+========================= -->
+
 <script>
 
-  // Your deployed Google Apps Script Web App URL.
-  // IMPORTANT: Keep this as a plain URL, NOT a Markdown link.
+  /*
+   * Google Apps Script Web App URL
+   *
+   * IMPORTANT:
+   * This must be the plain URL.
+   * Do NOT put Markdown brackets or parentheses around it.
+   */
+
   const GOOGLE_SHEET_URL =
     "https://script.google.com/macros/s/AKfycbxteEjtCb9Ve_ifBJSS72ZiA71YkLlVWL72AwW8dteofjwCqSkFBxNMLg8pItT4oFJg/exec";
 
+
+  /*
+   * Listen for form submission.
+   */
 
   document
     .getElementById('signupForm')
     .addEventListener('submit', async function(event) {
 
+
+      /*
+       * Prevent the browser from refreshing the page.
+       */
+
       event.preventDefault();
 
-      const form = event.currentTarget;
-      const status = document.getElementById('formStatus');
-      const button = form.querySelector('.submit');
 
+      const form =
+        event.currentTarget;
+
+      const status =
+        document.getElementById('formStatus');
+
+      const button =
+        form.querySelector('.submit');
+
+
+      /*
+       * Check whether the Google Sheet URL has been configured.
+       */
 
       if (GOOGLE_SHEET_URL.includes('PASTE_YOUR')) {
 
         status.textContent =
           'The form is ready, but the Google Sheet connection still needs to be added.';
 
-        status.style.color = '#a33b3b';
+        status.style.color =
+          '#a33b3b';
 
         return;
       }
 
 
       /*
-       * Collect normal form fields.
+       * Collect the regular form fields.
        */
-      const data = Object.fromEntries(
-        new FormData(form).entries()
-      );
+
+      const data =
+        Object.fromEntries(
+          new FormData(form).entries()
+        );
 
 
       /*
-       * Collect ALL checked session boxes.
+       * Collect ALL selected sessions.
+       *
+       * Because multiple checkboxes can be selected,
+       * we collect them into an array first.
        */
-      const selectedSessions = Array.from(
-        form.querySelectorAll('input[name="sessions"]:checked')
-      ).map(function(checkbox) {
-        return checkbox.value;
-      });
+
+      const selectedSessions =
+        Array.from(
+          form.querySelectorAll(
+            'input[name="sessions"]:checked'
+          )
+        ).map(function(checkbox) {
+
+          return checkbox.value;
+
+        });
 
 
       /*
-       * Make sure at least one session was selected.
+       * Make sure the parent selected at least one session.
        */
+
       if (selectedSessions.length === 0) {
 
         status.textContent =
           'Please select at least one session your child can attend.';
 
-        status.style.color = '#a33b3b';
+        status.style.color =
+          '#a33b3b';
 
         return;
       }
 
 
       /*
-       * Store all selected sessions together.
+       * Put all selected sessions into one field.
+       *
+       * Example:
+       *
+       * October 27, 3-4 PM, Sedgwick,
+       * October 28, 6-7 PM, Sedgwick
        */
-      data.sessions = selectedSessions.join(', ');
 
+      data.sessions =
+        selectedSessions.join(', ');
+
+
+      /*
+       * Disable the button while submitting.
+       */
 
       button.disabled = true;
-      button.textContent = 'Submitting…';
+
+      button.textContent =
+        'Submitting…';
+
 
       status.textContent =
         'Sending your sign-up request…';
 
-      status.style.color = '#41694a';
+      status.style.color =
+        '#41694a';
 
 
       try {
 
-        await fetch(GOOGLE_SHEET_URL, {
 
-          method: 'POST',
+        /*
+         * Send the information to Google Apps Script.
+         */
 
-          mode: 'no-cors',
+        await fetch(
+          GOOGLE_SHEET_URL,
+          {
+            method:'POST',
 
-          headers: {
-            'Content-Type': 'text/plain;charset=utf-8'
-          },
+            mode:'no-cors',
 
-          body: JSON.stringify(data)
+            headers:{
+              'Content-Type':
+                'text/plain;charset=utf-8'
+            },
 
-        });
+            body:
+              JSON.stringify(data)
+          }
+        );
 
+
+        /*
+         * Clear the form after submission.
+         */
 
         form.reset();
+
+
+        /*
+         * Show success message.
+         */
 
         status.textContent =
           'Thank you! Your sign-up request has been submitted.';
 
-        status.style.color = '#19764b';
+        status.style.color =
+          '#19764b';
 
 
-      } catch (error) {
+      } catch(error) {
+
+
+        /*
+         * Show error message.
+         */
 
         status.textContent =
           'Something went wrong. Please contact curiousclinics@gmail.com.';
 
-        status.style.color = '#a33b3b';
+        status.style.color =
+          '#a33b3b';
 
       } finally {
+
+
+        /*
+         * Re-enable the button.
+         */
 
         button.disabled = false;
 
